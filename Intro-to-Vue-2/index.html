@@ -23,6 +23,12 @@
                 <span>{{description}}</span>
                 <h3 v-if="inStock">In Stock</h3>
                 <h3 v-else-if="!inStock">Out Of Stock</h3>
+                <ul>
+                    <li v-for="(detail,index) in details" :key="index">{{ detail }}</li>
+                </ul>
+                <ul>
+                    <li v-for="(variant,index) in variants" :key="variant.id">{{ variant.color }}</li>
+                </ul>
             </div>
 
         </div>
