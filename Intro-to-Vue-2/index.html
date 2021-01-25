@@ -8,27 +8,31 @@
 </head>
 <body>
     <div id="app">
-
+        <div class="cart">{{ cart }}</div>
         <div class="product">
 
             <div class="product-image">
                 <a :href="link">
-                    <img :src="image1"/>
+                    <img :src="variants[selectedVariant].image"/>
                 </a>
             </div>
 
             <div class="product-info">
                 <h2 v-if="onSale">On Sale</h2>
-                <h1>{{socks}}</h1>
-                <span>{{description}}</span>
+                <h1>{{ socks }}</h1>
+                <span>{{ description }}</span>
                 <h3 v-if="inStock">In Stock</h3>
                 <h3 v-else-if="!inStock">Out Of Stock</h3>
                 <ul>
                     <li v-for="(detail,index) in details" :key="index">{{ detail }}</li>
                 </ul>
-                <ul>
-                    <li v-for="(variant,index) in variants" :key="variant.id">{{ variant.color }}</li>
-                </ul>
+               
+                <div v-for="(variant,index) in variants" :key="variant.id">
+                    <p @mouseover="updateVariant(index)">{{ variant.color }}</p>
+                </div>
+
+                
+                <button v-on:click="addToCart()">Add to cart</button>
             </div>
 
         </div>
