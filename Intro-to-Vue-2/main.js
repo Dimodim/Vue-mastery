@@ -73,7 +73,16 @@ Vue.component(
         },
         methods: {
             addToCart: function(){
-                this.$emit('add-to-cart');
+                const product = {
+                    socks: this.socks,
+                    description: this.description,
+                    link: this.link,
+                    id: this.variants[this.selectedVariant].id, 
+                    color: this.variants[this.selectedVariant].color,
+                    image: this.variants[this.selectedVariant].image,
+                    details:this.details,
+                };
+                this.$emit('add-to-cart', product);
             },
             updateVariant: function (index){
                 this.selectedVariant = index;
@@ -88,12 +97,12 @@ var app = new Vue({
     data(){
         return {
             premium: true,
-            cart: 0
+            cart: []
         };
     },
     methods: {
-        addToCart(){
-            this.cart++;
+        addToCart(product){
+           this.cart.push(product);
         }
     }
 });
