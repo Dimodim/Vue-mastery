@@ -73,7 +73,7 @@ Vue.component(
         },
         methods: {
             addToCart: function(){
-                this.cart+=1;
+                this.$emit('add-to-cart');
             },
             updateVariant: function (index){
                 this.selectedVariant = index;
@@ -89,6 +89,11 @@ var app = new Vue({
         return {
             premium: true,
             cart: 0
+        };
+    },
+    methods: {
+        addToCart(){
+            this.cart++;
         }
     }
 });
