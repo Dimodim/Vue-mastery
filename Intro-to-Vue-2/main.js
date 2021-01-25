@@ -5,7 +5,6 @@ var app = new Vue({
             socks: 'Socks',
             description: 'Crisp socks that you can\'t miss on',
             link: '#',
-            inStock: true,
             onSale:true,
             selectedVariant: 0,
             variants: [
@@ -28,13 +27,22 @@ var app = new Vue({
             cart: 0
         };
     },
+    computed:{
+        title(){
+            return 'View Mastery ' + this.socks;
+        },
+        inStock(){
+            return  this.variants[this.selectedVariant].quantity > 0;
+          }
+    },
     methods: {
         addToCart: function(){
             this.cart+=1;
         },
         updateVariant: function (index){
             this.selectedVariant = index;
-        }
+        },
+        
     },
 
 });
