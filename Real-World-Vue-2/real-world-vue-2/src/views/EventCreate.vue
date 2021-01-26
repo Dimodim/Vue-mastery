@@ -4,7 +4,7 @@
 
 <script>
 export default {
-  name: "event-create"
+  name: "EventCreate"
 };
 </script>
 
