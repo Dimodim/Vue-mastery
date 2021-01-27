@@ -1,6 +1,7 @@
 <template>
   <div>
     <div v-if="name" class="icon-wrapper" v-html="svg"></div>
+    <slot name="text-content"></slot>
   </div>
 </template>
 
