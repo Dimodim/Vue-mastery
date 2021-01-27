@@ -2,7 +2,6 @@
   <div>
     <h1>Show event</h1>
     <event-card />
-    <base-icon />
   </div>
 </template>
 

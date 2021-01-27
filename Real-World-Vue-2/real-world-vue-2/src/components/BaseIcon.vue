@@ -7,8 +7,12 @@
 <script>
 import feather from "feather-icons";
 export default {
+  name:"users",
   props: {
-    name: { type: String, default: "Icon" },
+    name: { 
+      type: String, 
+      default: "users" 
+      },
     width: {
       type: [Number, String],
       default: 24
