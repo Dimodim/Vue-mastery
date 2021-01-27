@@ -1,11 +1,8 @@
 <template>
   <div>
     <h1>Show event</h1>
-    <event-card></event-card>
-    <router-link :to="{ name: 'event-show', props: { id: 1 } }"
-      >Show</router-link
-    >
-    |
+    <event-card />
+    <base-icon />
   </div>
 </template>
 
