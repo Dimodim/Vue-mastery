@@ -14,7 +14,7 @@ const routes = [
     props: route => ({ page: parseInt(route.query.page) || 1 })
   },
   {
-    path: '/event/:id',
+    path: '/events/:id',
     name: 'EventLayout',
     props: true,
     component: EventLayout,
@@ -37,9 +37,30 @@ const routes = [
     ]
   },
   {
-    path: '/about',
+    // path: '/event:id',
+    path: '/event:afterEvent(.*)', //matches everything after event
+    redirect: to => {
+      return { path: '/events/' + to.params.afterEvent }
+      // return { name: 'EventDetails', params: { id: to.params.id } }
+    },
+    // children: [
+    //   { path: 'register', redirect: () => ({ name: 'EventRegister' }) },
+    //   {
+    //     path: 'edit',
+    //     redirect: to => ({ name: 'EventEdit', params: { id: to.params.id } })
+    //   }
+    // ]
+  },
+
+  {
+    path: '/about-us',
     name: 'About',
     component: About
+    // alias: '/about'
+  },
+  {
+    path: '/about',
+    redirect: { name: About }
   }
 ]
 
