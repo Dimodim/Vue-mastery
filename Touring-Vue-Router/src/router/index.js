@@ -65,20 +65,20 @@ const routes = [
     redirect: { name: About }
   },
   {
+    path: '/404/:resource',
+    name: 'NotFound',
+    component: NotFound,
+    props: true
+  },
+  {
     path: '/network-error',
     name: 'NetworkError',
     component: NetworkError
   },
   {
-    path: '/:catchAll(.*)',
+    path: '/(.*)',
     name: 'NotFound',
     component: NotFound
-  },
-  {
-    path: '/404/:resource',
-    name: 'NotFound',
-    component: NotFound,
-    props: true
   }
 ]
 

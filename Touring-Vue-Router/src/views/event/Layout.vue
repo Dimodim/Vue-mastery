@@ -34,7 +34,7 @@ export default {
       .catch(error => {
         if (error.response && error.response.status == 404) {
           this.$router.push({
-            name: '404Resource',
+            name: 'NotFound',
             params: { resource: 'event' }
           })
         } else {
