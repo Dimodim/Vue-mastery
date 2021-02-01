@@ -7,6 +7,7 @@ import EventLayout from '../views/event/Layout.vue'
 import About from '../views/About.vue'
 import NotFound from '../views/NotFound.vue'
 import NetworkError from '../views/NetworkError.vue'
+import EventCreate from '../views/event/EventCreate.vue'
 
 const routes = [
   {
@@ -14,6 +15,11 @@ const routes = [
     name: 'EventList',
     component: EventList,
     props: route => ({ page: parseInt(route.query.page) || 1 })
+  },
+  {
+    path: '/event-create',
+    name: 'EventCreate',
+    component: EventCreate
   },
   {
     path: '/events/:id',
