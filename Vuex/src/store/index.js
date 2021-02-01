@@ -25,21 +25,31 @@ export default createStore({
       { id: 4, text: '...', done: false }
     ]
   },
-  mutations: {},
-  actions: {},
+  mutations: {
+    ADD_EVENT(state, event) {
+      state.events.push(event)
+    }
+  },
+  actions: {
+    createEvent() {
+      // return EventService.postEvent(event).then(() => {
+      // commit('ADD_EVENT', event)
+      // })
+    }
+  },
   modules: {},
-  getters:{
-    getCategoryLength: (state) =>{
+  getters: {
+    getCategoryLength: state => {
       return state.categories.length;
     },
-    getDoneTodos: (state) => {
-      return state.todos.filter(todo => todo.done);
+    getDoneTodos: state => {
+      return state.todos.filter(todo => todo.done)
     },
     getActiveTodosCount: (state, getters) => {
-      return state.todos.length - getters.getDoneTodos.length;
+      return state.todos.length - getters.getDoneTodos.length
     },
-    getEventById: (state) => (id) => {
-      return state.events.find(event => event.id === id);
+    getEventById: state => id => {
+      return state.events.find(event => event.id === id)
     }
   }
-});
+})
