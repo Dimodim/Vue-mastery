@@ -9,13 +9,13 @@
 export default {
   data() {
     return {
-      name: ''
-    }
+      name: ""
+    };
   },
   methods: {
     onSubmit() {
-      this.$emit('formSubmitted', { name: this.name })
+      this.$emit("formSubmitted", { name: this.name });
     }
   }
-}
+};
 </script>

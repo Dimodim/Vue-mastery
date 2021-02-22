@@ -20,12 +20,13 @@ export default {
   data() {
     return {
       randomNumber: 0
-    }
+    };
   },
   methods: {
     getRandomNumber() {
-      this.randomNumber = Math.floor(Math.random() * (this.max - this.min + 1) ) + this.min;
+      this.randomNumber =
+        Math.floor(Math.random() * (this.max - this.min + 1)) + this.min;
     }
   }
-}
+};
 </script>

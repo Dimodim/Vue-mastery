@@ -3,11 +3,11 @@
 </template>
 
 <script>
-import MessageDisplay from '@/components/MessageDisplay'
+import MessageDisplay from "@/components/MessageDisplay";
 
 export default {
   components: {
     MessageDisplay
   }
-}
+};
 </script>
