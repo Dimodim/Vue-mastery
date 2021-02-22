@@ -8,8 +8,8 @@ describe("MessageContainer", () => {
         MessageDisplay: '<p data-testid="message">Hello from the db!</p>'
       }
     });
-  });
 
-  const message = wrapper.find('[data-testid="message"]').element.textContent;
-  expect(message).toEqual("Hello from the db!");
+    const message = wrapper.find('[data-testid="message"]').element.textContent;
+    expect(message).toEqual("Hello from the db!");
+  });
 });
