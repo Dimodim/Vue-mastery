@@ -26,9 +26,9 @@ const router = new Router({
       name: 'event-show',
       component: EventShow,
       props: true,
-      beforeEnter(routeTo, routeFrom, next){
-        store.dispatch('event/fetchEvent', routeTo.params.id).then(event =>{
-          routeTo.params.event = event;
+      beforeEnter(routeTo, routeFrom, next) {
+        store.dispatch('event/fetchEvent', routeTo.params.id).then(event => {
+          routeTo.params.event = event
           next()
         })
       }
@@ -36,13 +36,13 @@ const router = new Router({
   ]
 })
 
-router.beforeEach((routerTo,routerFrom,next) => {
-  NProgress.start();
-  next();
+router.beforeEach((routerTo, routerFrom, next) => {
+  NProgress.start()
+  next()
 })
 
-router.afterEach((routerTo,routerFrom,next) => {
-  NProgress.done();
+router.afterEach(() => {
+  NProgress.done()
 })
 
 export default router

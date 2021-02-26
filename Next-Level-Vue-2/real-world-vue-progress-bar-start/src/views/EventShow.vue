@@ -28,12 +28,12 @@
 // import { mapState, mapActions } from 'vuex'
 
 export default {
-  props:{
+  props: {
     event: {
       type: Object,
       required: true
     }
-  } 
+  }
   // ['id'],
   // created() {
   //   this.fetchEvent(this.id)
