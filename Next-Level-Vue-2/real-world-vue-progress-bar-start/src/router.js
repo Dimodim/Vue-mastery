@@ -4,10 +4,11 @@ import EventCreate from './views/EventCreate.vue'
 import EventList from './views/EventList.vue'
 import EventShow from './views/EventShow.vue'
 import NProgress from 'nprogress'
+import store from './store/store'
 
 Vue.use(Router)
 
-export  const router = new Router({
+const router = new Router({
   mode: 'history',
   routes: [
     {
@@ -24,16 +25,24 @@ export  const router = new Router({
       path: '/event/:id',
       name: 'event-show',
       component: EventShow,
-      props: true
+      props: true,
+      beforeEnter(routeTo, routeFrom, next){
+        store.dispatch('event/fetchEvent', routeTo.params.id).then(event =>{
+          routeTo.params.event = event;
+          next()
+        })
+      }
     }
   ]
 })
 
-// router.beforeEach((routerTo,routerFrom,next) => {
-//   NProgress.start();
-//   next();
-// })
+router.beforeEach((routerTo,routerFrom,next) => {
+  NProgress.start();
+  next();
+})
 
-// router.afterEach((routerTo,routerFrom,next) => {
-//   NProgress.done();
-// })
+router.afterEach((routerTo,routerFrom,next) => {
+  NProgress.done();
+})
+
+export default router
