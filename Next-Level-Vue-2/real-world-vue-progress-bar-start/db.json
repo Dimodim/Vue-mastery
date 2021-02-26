@@ -249,6 +249,24 @@
       "date": "2021-02-03T12:39:00.000Z",
       "time": "13:00",
       "attendees": []
+    },
+    {
+      "id": 6606700,
+      "user": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "category": "nature",
+      "organizer": {
+        "id": "abc123",
+        "name": "Adam"
+      },
+      "title": "AAAAAAAAAAAAAAAA",
+      "description": "AAAAAAAAAAAAAAAAAAA",
+      "location": "AAAAAAAAAAAAAAAAAAA",
+      "date": "2021-02-02T15:51:00.000Z",
+      "time": "1:00",
+      "attendees": []
     }
   ]
 }
