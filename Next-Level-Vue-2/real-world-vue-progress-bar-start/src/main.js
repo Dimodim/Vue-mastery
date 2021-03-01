@@ -7,6 +7,10 @@ import store from './store/store'
 import BaseIcon from '@/components/BaseIcon'
 import 'nprogress/nprogress.css'
 import Vuelidate from 'vuelidate'
+import DateFilter from './filters/date'
+    
+Vue.filter('date', DateFilter)
+//<span>{{ event.time }} on {{ event.date | date }}</span> the filter can be used in this way
 
 Vue.use(Vuelidate)
 Vue.component('BaseIcon', BaseIcon)
