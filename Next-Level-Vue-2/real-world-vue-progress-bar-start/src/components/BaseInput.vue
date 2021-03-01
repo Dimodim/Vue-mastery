@@ -1,11 +1,7 @@
 <template>
       <div>
         <label v-if="label">{{ label }}</label>
-        <input
-          @input="updateValue"
-          :value="value"
-          v-bind="$attrs"
-        />
+         <input :value="value" v-bind="$attrs" v-on="listeners">
       </div>
     </template>
     
@@ -15,6 +11,14 @@ export default {
   props: {
     value: [String, Number],
     label: String
+  },
+  computed: {
+    listeners() {
+      return {
+        ...this.$listeners,
+        input: this.updateValue
+      }
+    }
   },
   methods: {
     updateValue(event) {
