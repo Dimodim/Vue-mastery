@@ -15,7 +15,14 @@ export default new Vuex.Store({
       axios.defaults.headers.common['Authorization'] = `Bearer ${userData.token}`    
     }
   },
-  actions: {
+  actions: { 
+    login ({ commit }, credentials) {
+    return axios
+      .post('//localhost:3000/login', credentials)
+      .then(({ data }) => {
+        commit('SET_USER_DATA', data)
+      })
+    },
     register ({ commit }, credentials) {
       return axios
         .post('//localhost:3000/register', credentials)
@@ -23,5 +30,11 @@ export default new Vuex.Store({
           commit('SET_USER_DATA', data)
         })}
     
-   }
+   },
+   getters: {
+    loggedIn (state) {
+      return !!state.user
+    }
+  }
+  
 })
