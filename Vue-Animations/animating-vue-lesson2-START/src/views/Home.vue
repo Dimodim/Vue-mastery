@@ -11,7 +11,6 @@
         </p>
       </div>
     </transition>
-
   </div>
 </template>
 
@@ -30,6 +29,4 @@ export default {
 }
 </script>
 
-<style>
-
-</style>
+<style></style>
