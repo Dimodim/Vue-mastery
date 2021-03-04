@@ -1,6 +1,7 @@
 import Vue from 'vue'
 import Router from 'vue-router'
 import Modal from './views/Modal.vue'
+import State from './views/State.vue'
 
 Vue.use(Router)
 
@@ -12,6 +13,11 @@ export default new Router({
       path: '/',
       name: 'modal',
       component: Modal
+    },
+    {
+      path: '/state',
+      name: 'state',
+      component: State
     },
     {
       path: '/list',
