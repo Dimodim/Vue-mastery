@@ -20,7 +20,17 @@ export default {
     }
   },
   mounted() {
-    // stagger cards into position
+    gsap.from('.card', {
+      duration: 0.5,
+      opacity: 0,
+      scale: 0,
+      y: 100,
+      ease: 'power1',
+      stagger: {
+        each: 0.2,
+        from: 'center'
+      }
+    })
   }
 }
 </script>
