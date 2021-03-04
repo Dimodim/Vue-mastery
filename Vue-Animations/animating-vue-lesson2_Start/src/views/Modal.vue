@@ -1,6 +1,6 @@
 <template>
-  <div class="home">
-    <h1>This is Home View page</h1>
+  <div>
+    <h1>This is the modal page</h1>
 
     <button @click="toggleModal">Open</button>
 
@@ -28,5 +28,3 @@ export default {
   }
 }
 </script>
-
-<style></style>
