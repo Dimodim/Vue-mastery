@@ -3,7 +3,8 @@
     <div id="nav">
       <router-link to="/">Home</router-link> |
       <router-link to="/about">About</router-link> |
-      <router-link to="/list">List</router-link>
+      <router-link to="/list">List</router-link> |
+      <router-link to="/drawer">Drawer</router-link>
     </div>
     <transition name="slide-fade" mode="out-in">
       <router-view />
@@ -112,6 +113,6 @@ ul {
 }
 
 .slide-up-move {
-  transition: transform 0.8s ease-out;
+  transition: transform 0.8s ease-in;
 }
 </style>
